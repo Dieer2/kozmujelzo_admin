@@ -1,5 +1,5 @@
 <?php
-    $serverData = parse_ini_file("../php.ini");
+    $serverData = parse_ini_file("php.ini");
 
     $host = $serverData['host'];
     $username = $serverData['user'];

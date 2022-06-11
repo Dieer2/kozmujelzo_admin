@@ -20,11 +20,20 @@ $(document).ready(function () {
                 <label for="termekWindowNev">Termék név: </label>
                 <input id="termekWindowNev" type="text" />
                 <label for="termekWindowSzin">Termék szín: </label>
-                <input id="termekWindowSzin" type="text" />
+                <select id="termekWindowSzin" type="text">
+                </select>
                 <label for="termekWindowMinta">Termék minta: </label>
-                <input id="termekWindowMinta" type="text" />
+                <select id="termekWindowMinta" type="text">
+                </select>
                 <label for="termekWindowRaktaron">Raktáron: </label>
                 <input id="termekWindowRaktaron" type="number" />
+                <label for="termekWindowLeiras">Termék leírás: </label>
+                <textarea id="termekWindowLeiras"></textarea>
+                <label for="termekWindowKep">Termék képe: </label>
+                <input accept="image/*" id="termekWindowKep" type="file" />
+                <label for="termekWindowKepek">További képek: </label>
+                <input accept="image/*" id="termekWindowKepek" type="file" multiple />
+                <input type="submit" value="Mentés" />
             </form>`
         );
     }
@@ -33,6 +42,11 @@ $(document).ready(function () {
 
     }
 
+    function setTermek() {
+
+    }
+
     getTermekek();
+    getTermekWindow("#newTermekButton")
 
 });

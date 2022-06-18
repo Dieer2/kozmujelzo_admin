@@ -44,7 +44,7 @@ $(document).ready(function () {
         <form action="" autocomplete="off" id="termekWindow" method="post">
             <p id="termekWindowId">Id: </p>
             <label for="termekWindowNev">Termék név: </label>
-            <input id="termekWindowNev" name="termekWindowNev" maxlength="100" required type="text" value="Új termék" />
+            <input id="termekWindowNev" name="termekWindowNev" minlength="1" maxlength="100" required type="text" value="Új termék" />
             <label for="termekWindowSzin">Termék szín: </label>
             <select id="termekWindowSzin" name="termekWindowSzin" type="text">
             </select>
@@ -67,6 +67,12 @@ $(document).ready(function () {
 
     function setTermek() {
 
+    }
+
+    function formValidate() {
+        if (!$(`#termekWindowNev`)) {
+            $(`#termekWindowNev`).append(`<label class="errorMessage" for="termekWindowNev">Minimum 1 karakter legyen a név!</label>`)
+        }
     }
 
     preventFormResubmit();

@@ -41,24 +41,24 @@ $(document).ready(function () {
 
     function showTermekWindow(caller) {
         $(`${caller}`).after(`
-        <form id="termekWindow" action="" method="post">
+        <form action="" autocomplete="off" id="termekWindow" method="post">
             <p id="termekWindowId">Id: </p>
             <label for="termekWindowNev">Termék név: </label>
-            <input id="termekWindowNev" type="text" />
+            <input id="termekWindowNev" name="termekWindowNev" maxlength="100" required type="text" value="Új termék" />
             <label for="termekWindowSzin">Termék szín: </label>
-            <select id="termekWindowSzin" type="text">
+            <select id="termekWindowSzin" name="termekWindowSzin" type="text">
             </select>
             <label for="termekWindowMinta">Termék minta: </label>
-            <select id="termekWindowMinta" type="text">
+            <select id="termekWindowMinta" name="termekWindowMinta" type="text">
             </select>
             <label for="termekWindowRaktaron">Raktáron: </label>
-            <input id="termekWindowRaktaron" type="number" />
+            <input id="termekWindowRaktaron" name="termekWindowRaktaron" type="number" value="0" />
             <label for="termekWindowLeiras">Termék leírás: </label>
-            <textarea id="termekWindowLeiras"></textarea>
+            <textarea id="termekWindowLeiras" maxlength="65535" name="termekWindowLeiras"></textarea>
             <label for="termekWindowKep">Termék képe: </label>
-            <input accept="image/*" id="termekWindowKep" type="file" />
+            <input accept="image/*" id="termekWindowKep" name="termekWindowKep" type="file" />
             <label for="termekWindowKepek">További képek: </label>
-            <input accept="image/*" id="termekWindowKepek" type="file" multiple />
+            <input accept="image/*" id="termekWindowKepek" name="termekWindowKepek" type="file" multiple />
             <button id="cancelTermekWindowButton" type="button">Mégse</button>
             <input type="submit" value="Hozzáad" />
         </form>`

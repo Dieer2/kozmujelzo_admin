@@ -1,8 +1,13 @@
 <?php
     include("connect.php");
 
+    if(!isset($_SERVER['HTTP_REFERER'])) {
+        header('location:../index.html');
+        exit;
+    }
+
     if(!$connection){
-        echo 'Adatbázis kapcsolódási hiba: '.mysqli_connect_error();
+        echo "Adatbázis kapcsolódási hiba: ".mysqli_connect_error();
     }else {
         $termekekQuery = "SELECT * FROM termekek";
 
